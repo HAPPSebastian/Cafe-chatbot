@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#315744">
+  <meta name="description" content="Ask the fictional Café Linden about its menu, opening hours and more.">
+  <title>Café Linden · Ask us</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <main>
+      <section class="conversation" aria-label="Ask the café">
+        <div class="conversation-heading"><span>Café assistant</span><button id="clear" class="text-button" type="button" hidden>Clear conversation</button></div>
+        <div id="messages" role="log" aria-label="Questions and answers" aria-live="polite" aria-relevant="additions text">
+          <div id="welcome" class="welcome">
+            <p>Hi there. What can I help you with?</p>
+            <span>Try a question below, or write your own.</span>
+          </div>
+        </div>
+        <div class="suggestions" aria-label="Example questions">
+          <button type="button" data-question="What vegan food do you serve?">Something vegan</button>
+          <button type="button" data-question="When do you open?">Opening hours</button>
+          <button type="button" data-question="What does a cappuccino cost and how can I contact you?">Coffee &amp; contact</button>
+        </div>
+        <form id="question-form">
+          <label for="question">Your question</label>
+          <div class="composer">
+            <textarea id="question" name="question" rows="1" maxlength="2000" placeholder="Ask about our café…" required></textarea>
+            <button id="send" class="send" type="submit">Send <span aria-hidden="true">↗</span></button>
+          </div>
+        </form>
+        <p id="error" role="alert" hidden></p>
+        <noscript><p class="noscript">Enable JavaScript to ask a question, or use the <a href="/ask?question=When%20do%20you%20open%3F">GET API</a>.</p></noscript>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
